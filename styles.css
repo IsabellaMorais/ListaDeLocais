@@ -1,0 +1,161 @@
+/* Resetando margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Estilo do Header */
+header {
+    background-color: #27ae60; /* Verde */
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* Laranja */
+}
+
+/* Seção Home */
+#home {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#home h2 {
+    font-size: 32px;
+    color: #2c3e50; /* Cor escura para destaque */
+}
+
+/* Seção de Cidades */
+.cidades-section {
+    background-color: #ecf0f1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.cidades-section h2 {
+    font-size: 28px;
+    color: #27ae60; /* Verde */
+    margin-bottom: 30px;
+}
+
+.cidade-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cidade-card {
+    background-color: white;
+    width: 220px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cidade-card:hover {
+    transform: translateY(-10px);
+    background-color: #f1c40f; /* Laranja suave ao passar o mouse */
+}
+
+.cidade-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cidade-card h3 {
+    font-size: 20px;
+    margin-top: 15px;
+    color: #27ae60; /* Verde */
+}
+
+.cidade-card p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+/* Seção Sobre */
+.sobre-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.sobre-section h2 {
+    font-size: 28px;
+    color: #27ae60; /* Verde */
+    margin-bottom: 20px;
+}
+
+.sobre-section p {
+    font-size: 16px;
+    color: #7f8c8d;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #27ae60; /* Verde */
+    color: white;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* Botões */
+button {
+    padding: 10px 20px;
+    background-color: #f39c12; /* Laranja */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e67e22; /* Laranja mais forte */
+}
+
+button:active {
+    transform: translateY(2px);
+}
