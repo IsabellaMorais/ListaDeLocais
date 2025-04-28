@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista de Locais - CulturaLive</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Função para deletar um local
+        function deleteLocation(id) {
+            const locationList = document.getElementById("location-list");
+            const locationItem = document.getElementById(id);
+            locationList.removeChild(locationItem);
+        }
+
+        // Função para editar um local
+        function editLocation(id) {
+            const locationItem = document.getElementById(id);
+            const nameElement = locationItem.querySelector(".location-name");
+            const newName = prompt("Editar nome do local:", nameElement.innerText);
+            if (newName) {
+                nameElement.innerText = newName;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>CulturaLive</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#locales">Locais</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Bem-vindo ao CulturaLive</h2>
+        <p>Explore eventos culturais e descubra pontos históricos e artísticos das cidades ao seu redor.</p>
+    </section>
+
+    <section id="locales">
+        <h2>Minha Lista de Locais</h2>
+        <ul id="location-list">
+            <li id="location1">
+                <span class="location-name">Museu de Arte de São Paulo (MASP)</span>
+                <button onclick="editLocation('location1')">Editar</button>
+                <button onclick="deleteLocation('location1')">Deletar</button>
+            </li>
+            <li id="location2">
+                <span class="location-name">Praia de Copacabana</span>
+                <button onclick="editLocation('location2')">Editar</button>
+                <button onclick="deleteLocation('location2')">Deletar</button>
+            </li>
+            <li id="location3">
+                <span class="location-name">Pelourinho, Salvador</span>
+                <button onclick="editLocation('location3')">Editar</button>
+                <button onclick="deleteLocation('location3')">Deletar</button>
+            </li>
+        </ul>
+        <button onclick="addLocation()">Adicionar Local</button>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre o CulturaLive</h2>
+        <p>A CulturaLive é uma plataforma interativa que mistura a descoberta de eventos culturais com a exploração de pontos históricos e artísticos das cidades. Utilizando AR e geolocalização, oferece uma experiência imersiva e única.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CulturaLive - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Função para adicionar um novo local à lista
+        function addLocation() {
+            const locationList = document.getElementById("location-list");
+            const newLocationName = prompt("Digite o nome do novo local:");
+            if (newLocationName) {
+                const newLocationId = "location" + (locationList.children.length + 1);
+                const newLocationItem = document.createElement("li");
+                newLocationItem.id = newLocationId;
+
+                newLocationItem.innerHTML = `
+                    <span class="location-name">${newLocationName}</span>
+                    <button onclick="editLocation('${newLocationId}')">Editar</button>
+                    <button onclick="deleteLocation('${newLocationId}')">Deletar</button>
+                `;
+
+                locationList.appendChild(newLocationItem);
+            }
+        }
+    </script>
+</body>
+</html>
